@@ -2,14 +2,14 @@ from django.urls import include, path
 from rest_framework import routers
 from django.contrib import admin
 
-# from dispositivo.views import DispositivoViewSet
-# from leitura.views import LeituraViewSet
+from dispositivo.views import DispositivoViewSet
+from leitura.views import LeituraViewSet
 from energiapp.views import UserActivationView
 
 router = routers.DefaultRouter()
 # SEMPRE APÓS DEFINIR UM get_queryset TEMOS QUE DIZER SEU BASENAME
-# router.register(r'dispositivos', DispositivoViewSet, basename='Dispositivo')
-# router.register(r'leituras', LeituraViewSet, basename='Leitura')
+router.register(r'dispositivos', DispositivoViewSet, basename='Dispositivo')
+router.register(r'leituras', LeituraViewSet, basename='Leitura')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
