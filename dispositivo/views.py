@@ -17,4 +17,16 @@ class DispositivoViewSet(viewsets.ModelViewSet):
     # SERÁ MOSTRADO SOMENTE AS LISTAS DO USUÁRIO QUE TIVER LOGADO
     def get_queryset(self):
         user = self.request.user
-        return Dispositivo.objects.filter(user=user)
+        id = self.request.query_params.get('id', None)
+        mac = self.request.query_params.get('mac', None)
+        queryset = Dispositivo.objects.filter(user=user)
+
+        # REALIZAR CONSULTAR NA URL: http://127.0.0.1:8000/dispositivos/?mac=teste 
+        # SE ENVIAR O IR NA URL:
+        if id:
+            queryset = Dispositivo.objects.filter(pk=id)
+        # SE ENVIAR O MAC NA URL:
+        if mac:
+            queryset = Dispositivo.objects.filter(mac__iexact=mac)
+
+        return queryset
