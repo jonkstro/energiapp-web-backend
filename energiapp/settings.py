@@ -189,4 +189,12 @@ REST_FRAMEWORK = {
 # Acessar ao servidor
 CORS_ALLOW_ALL_ORIGINS = True
 
-CSRF_TRUSTED_ORIGINS = ['https://energiapp.up.railway.app']
+CSRF_TRUSTED_ORIGINS = [
+	"https://*localhost:3000",
+	"https://*127.0.0.1:3000",
+	"https://*localhost:3001",
+	"https://*127.0.0.1:3001",
+	'https://*energiapp.up.railway.app',
+	'https://*localhost:3000',
+	'https://*energiapp.vercel.app'
+]

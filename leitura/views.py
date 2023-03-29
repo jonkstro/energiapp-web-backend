@@ -9,10 +9,10 @@ class LeituraViewSet(viewsets.ModelViewSet):
     serializer_class = LeituraSerializer
 
     # CONFIGURAR PARA SÓ EXIBIR SE ESTIVER AUTENTICADO COM TOKEN
-    permission_classes = [permissions.IsAuthenticated]
-    authentication_classes = [
-            authentication.TokenAuthentication, 
-            authentication.SessionAuthentication
-        ]
+    # permission_classes = [permissions.IsAuthenticated]
+    # authentication_classes = [
+    #         authentication.TokenAuthentication, 
+    #         authentication.SessionAuthentication
+    #     ]
     def get_queryset(self):
         return Leitura.objects.all()
