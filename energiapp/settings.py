@@ -142,7 +142,7 @@ EMAIL_PORT = config('EMAIL_PORT')
 EMAIL_USE_TLS = True
 DEFAULT_FROM_EMAIL = config('DEFAULT_FROM_EMAIL')
 PROTOCOL = "http"
-DOMAIN = "127.0.0.1:8000" 
+DOMAIN = "127.0.0.1:3000" 
 SITE_NAME = 'EnergiApp'
 
 # Configurações do DJOSER para envio de email com links de ativações

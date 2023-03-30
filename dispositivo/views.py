@@ -30,3 +30,8 @@ class DispositivoViewSet(viewsets.ModelViewSet):
             queryset = Dispositivo.objects.filter(mac__iexact=mac)
 
         return queryset
+
+    def perform_create(self, serializer):
+        serializer.save(user = self.request.user)
+        
+    
