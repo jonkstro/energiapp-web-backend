@@ -4,9 +4,9 @@ from dispositivo.models import Dispositivo
 
 
 class Leitura(models.Model):
-    dispositivo = models.ForeignKey(Dispositivo, on_delete=models.CASCADE)
+    mac = models.CharField(max_length=255, null=False, blank=False)
     leitura = models.CharField(max_length=255, null=False, blank=False)
-    created = models.DateTimeField(auto_now_add=True)
-
+    dateCreated = models.DateField(auto_now_add=True, null=False, blank=False)
+    timeCreated = models.TimeField(auto_now_add=True, null=False, blank=False)
     def __str__(self):
         return self.id

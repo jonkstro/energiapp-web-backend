@@ -15,7 +15,7 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -77,6 +77,14 @@ DATABASES = {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
+    # 'default': {
+    #     'ENGINE':config('DB_ENGINE'),
+    #     'NAME':config('DB_NAME'),
+    #     'USER':config('DB_USER'),
+    #     'PASSWORD':config('DB_PASSWORD'),
+    #     'HOST':config('DB_HOST'),
+    #     'PORT':config('DB_PORT')
+    # }
 }
 
 
